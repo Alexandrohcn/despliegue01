@@ -5,5 +5,8 @@
   "main": "index.js",
   "author": "Alexandro Cano",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
 }
