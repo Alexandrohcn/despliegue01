@@ -1,0 +1,9 @@
+{
+  "name": "despliegue01",
+  "version": "1.0.0",
+  "description": "Proyecto de despliegue con Node.js",
+  "main": "index.js",
+  "author": "Alexandro Cano",
+  "license": "MIT",
+  "private": false
+}
