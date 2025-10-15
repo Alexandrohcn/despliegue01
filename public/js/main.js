@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🌊 Invitación cargada con éxito");
+  console.log("🌊 Invitación cargada correctamente");
 
-  const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
-  audio.volume = 0.3;
-  audio.loop = true;
+  const form = document.getElementById("formRSVP");
+  const mensaje = document.querySelector(".mensaje");
 
-  // Intentar reproducir música de fondo
-  audio.play().catch(() => {
-    console.log("🎵 Reproducción bloqueada. Reproducir manualmente si se desea.");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    mensaje.textContent = "🎉 ¡Gracias por confirmar tu asistencia!";
+    form.reset();
   });
 });
