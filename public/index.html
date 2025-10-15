@@ -3,49 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎂 Cumpleaños de Lucas gordo 🐠</title>
+  <title>Invitación al Cumpleaños de Lucas 🐠🎂</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hero">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>🐳 ¡Sumérgete en la Aventura! 🐚</h1>
-      <p>Estás invitado al <strong>3° cumpleaños de Lucas gordo</strong></p>
-      <a href="#detalles" class="btn">Ver detalles</a>
-    </div>
-    <div class="animacion">
-      <img src="img/pez1.png" alt="pez" class="pez pez1">
-      <img src="img/pez2.png" alt="pez" class="pez pez2">
-      <img src="img/burbujas.png" alt="burbujas" class="burbujas">
-    </div>
-  </div>
+  <div class="fondo">
+    <img src="img/fondo-marino.jpg" alt="Fondo marino" class="fondo-img" />
 
-  <section id="detalles" class="detalles">
+    <!-- Peces animados -->
+    <img src="img/pez1.png" class="pez pez1" alt="Pez naranja" />
+    <img src="img/pez2.png" class="pez pez2" alt="Pez azul" />
+
+    <!-- Burbujas -->
+    <div class="burbujas">
+      <img src="img/burbujas.png" class="burbuja" />
+      <img src="img/burbujas.png" class="burbuja delay1" />
+      <img src="img/burbujas.png" class="burbuja delay2" />
+    </div>
+
+    <!-- Contenido principal -->
     <div class="tarjeta">
-      <h2>🎉 ¡Te esperamos!</h2>
-      <p><strong>🗓 Fecha:</strong> Domingo 20 de Octubre</p>
-      <p><strong>🕓 Hora:</strong> 3:00 p.m.</p>
-      <p><strong>📍 Lugar:</strong> Salón “Mundo Marino” - Av. Los Corales 123</p>
-      <p><strong>💦 Tema:</strong> Aventuras bajo el mar</p>
-      <a href="#rsvp" class="btn">Confirmar asistencia</a>
+      <h1>¡Fiesta bajo el mar! 🌊🐟</h1>
+      <p class="mensaje">
+        ¡Nuestro pequeño explorador del océano <strong>Lucas Gordo</strong> cumple <strong>2 añitos</strong>!  
+        Acompáñanos en una aventura marina llena de color, burbujas y mucha diversión.
+      </p>
+
+      <div class="detalles">
+        <p>📅 <strong>Domingo 27 de Octubre</strong></p>
+        <p>🕓 3:00 PM</p>
+        <p>📍 Salón “El Coral Feliz”</p>
+      </div>
+
+      <div class="confirmacion">
+        <p>Confirma tu asistencia con mamá 🧜‍♀️</p>
+        <button id="confirmar-btn">Confirmar Asistencia</button>
+      </div>
     </div>
-  </section>
 
-  <section id="rsvp" class="rsvp">
-    <h2>💌 Confirma tu asistencia</h2>
-    <form id="formRSVP">
-      <input type="text" placeholder="Tu nombre" required />
-      <input type="number" placeholder="Cantidad de acompañantes" required min="0" />
-      <button type="submit">Enviar</button>
-    </form>
-    <p class="mensaje"></p>
-  </section>
-
-  <footer>
-    <p>Con cariño, la familia de <strong>Lucas gordo 🐙</strong></p>
-  </footer>
+    <img src="img/coral.png" class="decoracion-coral" alt="Corales" />
+  </div>
 
   <script src="js/main.js"></script>
 </body>
