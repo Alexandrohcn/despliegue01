@@ -1,6 +1,6 @@
 /* Fondo oceánico */
 body {
-  background: url('fondo-marino.png') no-repeat center center fixed;
+  background: url('img/fondo-marino.png') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   color: #fff;
@@ -52,14 +52,28 @@ body {
   animation-delay: 0s;
 }
 
+/* Animación para el pez2 */
 .pez2 {
-  top: 60%;
-  left: 100%;
-  background: url('img/pez2.png') no-repeat center;
-  background-size: contain;
-  height: 100px;
-  animation: nadarInverso 18s linear infinite;
-  animation-delay: 3s;
+  position: absolute;
+  bottom: -150px; /* Comienza fuera de la pantalla */
+  left: 60%;
+  width: 100px;
+  animation: subirPez 8s linear infinite;
+}
+
+/* Movimiento hacia arriba */
+@keyframes subirPez {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh); /* Se mueve hacia arriba fuera de la vista */
+    opacity: 0;
+  }
 }
 
 @keyframes nadar {
@@ -86,11 +100,12 @@ body {
 
 /* Caja de la invitación */
 .invitacion {
-  background: rgba(0, 0, 50, 0.6);
+  background:transparent;
   padding: 40px;
   border-radius: 25px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
+  box-shadow: none;
+  backdrop-filter: none;
+
   max-width: 500px;
   z-index: 10;
 }
