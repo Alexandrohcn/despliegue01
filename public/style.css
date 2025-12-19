@@ -1,140 +1,98 @@
-/* Fondo oceánico */
+/* Fondo general */
 body {
-  background: url('img/fondo-marino.png') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #fff;
-  text-align: center;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100vh;
+  background: linear-gradient(180deg, #0b3d2e, #145a32);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
-  position: relative;
 }
 
-/* Efectos animados: burbujas */
-.burbujas {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  background: url('img/burbujas.png') no-repeat center;
-  background-size: contain;
-  animation: subirBurbujas 8s infinite ease-in-out;
-  opacity: 0.8;
-  transform: translateX(-50%);
-}
-
-@keyframes subirBurbujas {
-  0% { transform: translate(-50%, 100%); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translate(-50%, -100%); opacity: 0; }
-}
-
-/* Animaciones de peces */
-.pez {
-  position: absolute;
-  width: 100px;
-  animation: nadar 15s linear infinite;
-  opacity: 0.9;
-}
-
-.pez1 {
-  top: 30%;
-  left: -120px;
-  background: url('img/pez1.png') no-repeat center;
-  background-size: contain;
-  height: 80px;
-  animation-delay: 0s;
-}
-
-/* Animación para el pez2 */
-.pez2 {
-  position: absolute;
-  bottom: -150px; /* Comienza fuera de la pantalla */
-  left: 60%;
-  width: 100px;
-  animation: subirPez 8s linear infinite;
-}
-
-/* Movimiento hacia arriba */
-@keyframes subirPez {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120vh); /* Se mueve hacia arriba fuera de la vista */
-    opacity: 0;
-  }
-}
-
-@keyframes nadar {
-  0% { left: -150px; }
-  100% { left: 110%; }
-}
-
-@keyframes nadarInverso {
-  0% { left: 110%; }
-  100% { left: -150px; }
-}
-
-/* Coral decorativo */
-.coral {
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 180px;
-  height: 150px;
-  background: url('img/coral.png') no-repeat center;
-  background-size: contain;
-  opacity: 0.9;
-}
-
-/* Caja de la invitación */
+/* Tarjeta */
 .invitacion {
-  background:transparent;
-  padding: 40px;
-  border-radius: 25px;
-  box-shadow: none;
-  backdrop-filter: none;
-
-  max-width: 500px;
-  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px;
+  max-width: 420px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  animation: aparecer 1.2s ease;
 }
 
-/* Títulos y texto */
-h1, h2 {
+/* Títulos */
+.invitacion h1 {
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+.invitacion h2 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+/* Texto */
+.invitacion p {
+  color: #333;
+  line-height: 1.6;
   margin: 10px 0;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-p {
-  font-size: 18px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Botón */
 button {
-  background-color: #00bcd4;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
-  color: white;
-  padding: 10px 25px;
   border-radius: 30px;
-  font-size: 18px;
+  background: linear-gradient(45deg, #c62828, #2e7d32);
+  color: white;
   cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-  background-color: #008c9e;
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nieve */
+.nieve::before,
+.nieve::after {
+  content: "❄ ❅ ❆ ❄ ❅ ❆ ❄ ❅ ❆";
+  position: absolute;
+  top: -10%;
+  width: 100%;
+  font-size: 22px;
+  color: white;
+  opacity: 0.6;
+  animation: caer 12s linear infinite;
+}
+
+.nieve::after {
+  animation-duration: 18s;
+  opacity: 0.4;
+}
+
+@keyframes caer {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(120vh);
+  }
 }
